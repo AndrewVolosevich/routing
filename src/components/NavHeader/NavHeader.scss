@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  padding: 0 100px;
+}
+
+.links-container {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  color: tomato;
+}
