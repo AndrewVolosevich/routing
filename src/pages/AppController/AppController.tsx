@@ -9,6 +9,7 @@ import PostPage from "../PostPage/PostPage";
 import UserPage from "../UserPage/UserPage";
 import SecuredPage from "../SecuredPage/SecuredPage";
 import RequiredAuth from "../hoc/RequiredAuth/RequiredAuth";
+import LoginPage from "../LoginPage/LoginPage";
 
 const AppController = () => {
     return (
@@ -20,6 +21,7 @@ const AppController = () => {
                     {/*<Route path={'posts-old'} element={<Navigate to={'/posts'} replace />} />*/}
                     <Route path={'posts/:id'} element={<PostPage />} />
                     <Route path={'users'} element={<UsersPage />} />
+                    <Route path={'login'} element={<LoginPage />} />
                     <Route path={'users/:id'} element={<UserPage />} />
                     <Route path={'secret'} element={
                         <RequiredAuth>

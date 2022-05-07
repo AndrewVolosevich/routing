@@ -1,9 +1,13 @@
 import React from 'react';
 import './NavHeader.scss'
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import CustomLink from "../CustomLink/CustomLink";
+import useAuthContext from "../../hooks/useAuthContext";
 
 const NavHeader = () => {
+    const {user, signOut} = useAuthContext()
+    const navigate = useNavigate()
+
     return (
         <div className={'container'}>
             <div className={'links-container'}>
@@ -18,7 +22,13 @@ const NavHeader = () => {
                 <CustomLink to={'/users'}>Users</CustomLink>
                 <CustomLink to={'/secret'}>Secret</CustomLink>
             </div>
-            <button>Button</button>
+            <button onClick={() => {
+                if (user) {
+                    signOut(() => {})
+                } else {
+                    navigate('/login')
+                }
+            }} >{user ? 'Logout' : 'Login'}</button>
         </div>
     );
 };

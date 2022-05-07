@@ -6,8 +6,9 @@ const Layout = () => {
     return (
         <div>
             <NavHeader />
-
-            <Outlet />
+            <div style={{display: "flex", height: '100%', minHeight: '600px', padding: '50px 20px'}}>
+                <Outlet />
+            </div>
 
             <footer>2022</footer>
         </div>
